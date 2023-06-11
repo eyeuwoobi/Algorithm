@@ -4,3 +4,11 @@ print('*을 출력합니다.')
 n = int(input('몇 개를 출력할까요?: '))
 w = int(input('몇 개마다 줄바꿈할까요?: '))
 
+for i in range(n // w):
+    for i in range(w):
+        print('*', end='')
+    print()
+
+for i in range(n % w):
+    print('*', end='')
+print()
