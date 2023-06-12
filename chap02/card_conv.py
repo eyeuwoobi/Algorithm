@@ -10,6 +10,5 @@ def card_conv(x: int, r:int) -> str:
     return d[::-1]
 
 if __name__ == '__main__':
-    x = int(input('정숫값 x를 입력하세요.: '))
-    r = int(input('진수를 입력하세요.: '))
-    print(f'{x}는 {r}진수로 {card_conv(x, r)}입니다.')
+    print('10진수를 n진수로 변환합니다.')
+    
