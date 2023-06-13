@@ -3,14 +3,17 @@
 def card_conv(x: int, r:int) -> str:
     """정숫값 x를 r진수로 변환한 뒤 그 수를 나타내는 문자열을 반환"""
     d = ''
+    left = 0
     char = '0123456789ABCDEFGHIJKLMNOPQRSTUWXYZ'
+    n = len(str(x))
 
     while x > 0:
         d += char[x % r]
-        print(f'{r} | {x}...{x % r}')
+        print(f'{r:2} | {x}...{x % r}')
         print(' +----')
+        left = x % r
         x = x // r
-    print(f'  0...{x%r}')
+    print(f'  0...{left}')
     return d[::-1]
 
 if __name__ == '__main__':
