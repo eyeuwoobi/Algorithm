@@ -15,8 +15,8 @@ class FixedStack:
 
     def __init__(self, capacity: int = 256) -> None:
         """스택 초기화"""
-        self.stk = [None] * self.capacity   #스택 본체
         self.capacity = capacity            #스택의 크기
+        self.stk = [None] * self.capacity   #스택 본체
         self.pointer = 0                    #스택 포인터
 
     def __len__(self) -> int:
