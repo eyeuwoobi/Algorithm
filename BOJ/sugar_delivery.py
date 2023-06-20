@@ -17,10 +17,13 @@ else:
     
     else:
         for i in range(1, kg_5 + 1):
+            kg_5 = N // 5
             if ((N % 5) + i * 5) % 3 == 0:
                 kg_5 -= i
                 kg_3 = ((N % 5) + i * 5) // 3
 
                 print(kg_3 + kg_5)
                 break
+        if kg_3 == 0:
+            print('-1')
     
