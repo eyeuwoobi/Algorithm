@@ -7,6 +7,7 @@ cnt = 0
 while True:
     a[cnt % n] = int(input())
     
+    
 
     
     
