@@ -7,3 +7,4 @@ for _ in A:
     if _ < X:
         low.append(_)
 
+print(*low, sep=' ')
