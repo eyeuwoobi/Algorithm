@@ -5,7 +5,7 @@ T = int(sys.stdin.readline())
 for _ in range(T):
     H, W, N = map(int, sys.stdin.readline().split())
     if N % H == 0:
-        room = str(H)
+        room = str(N // H)
         floor = str(H)
     else:
         room = str(N // H + 1)
