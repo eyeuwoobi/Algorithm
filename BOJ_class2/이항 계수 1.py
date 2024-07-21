@@ -1,8 +1,15 @@
 import sys
-import math
 
-N, K = map(int, sys.stdin.readline().split())
+n, k = map(int, sys.stdin.readline().split())
 
-combination = math.factorial(N) / (math.factorial(K+1) * math.factorial(K))
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n-1)
 
-print(math.ceil(combination))
+def combination(n, k):
+    if n == k:
+        return 1
+    return factorial(n) // (factorial(n-k)*factorial(k))
+
+print(combination(n,k))
