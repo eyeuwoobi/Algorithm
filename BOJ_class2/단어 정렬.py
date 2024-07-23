@@ -7,18 +7,8 @@ for _ in range(N):
     words.add(sys.stdin.readline().rstrip())
 
 letters = list(words)
-letters.sort(key = len)
+letters.sort(key = lambda x : (len(x), x))
 
-max_len = len(letters[-1])
-min_len = len(letters[0])
-
-n = len(letters)
-i = 0
-while i <= n:
-    length = len(letters[i])
-    
-
-        
 print(*letters, sep='\n')
 
 
