@@ -12,10 +12,13 @@ while t <= n:
 curr_idx = k - 1
 
 for i in range(n):
-    popped_nums.append(nums.pop(curr_idx))
+    popped_nums.append(str(nums.pop(curr_idx)))
     if len(nums) == 0:
         break
-    curr_idx = (curr_idx + k) % len(nums)
+    nums = nums[curr_idx:] + nums[:curr_idx]
+    if k < len(nums):
+        curr_idx = k % len(nums) - 1
+    else:
+        curr_idx = (k-1) % len(nums)
     
-print(nums)
-print(*popped_nums)
+print('<'+', '.join(popped_nums)+'>')
