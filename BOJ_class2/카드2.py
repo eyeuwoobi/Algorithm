@@ -1,22 +1,16 @@
 import sys
+from collections import deque
 
 n = int(sys.stdin.readline())
 nums = []
+for i in range(n):
+    nums.append(i+1)
 
+queue = deque(nums)
 
-if n <= 4:
-    for i in range(n):
-        nums.append(i+1)
+while len(queue) > 1:
+    queue.popleft()
+    a = queue.popleft()
+    queue.append(a)
 
-
-    for i in range(n):
-        if i == n-1:
-            print(nums[0])
-            break
-        else:
-            nums.pop(0)
-            nums.append(nums[0])
-            nums = nums[1:]
-
-else:
-    print((n-4)*2)
+print(queue.popleft())

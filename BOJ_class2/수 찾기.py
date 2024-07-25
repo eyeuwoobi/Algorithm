@@ -2,11 +2,12 @@ import sys
 
 n = int(sys.stdin.readline())
 nums = list(map(int, sys.stdin.readline().split()))
-nums.sort()
 
 m = int(sys.stdin.readline())
 targets = list(map(int, sys.stdin.readline().split()))
 
+
+# 이진탐색
 def bin_search(list, number):
     pl = 0
     pr = n - 1
@@ -23,4 +24,5 @@ def bin_search(list, number):
         
 for target in targets:
     print(bin_search(nums, target))
-    
+
+#set으로도 계산가능
