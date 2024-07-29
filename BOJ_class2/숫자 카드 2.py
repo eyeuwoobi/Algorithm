@@ -45,6 +45,13 @@ def broad_search(list, idx, number):
             return counter
 
 
+def bin_updated(list, idx):
+    pr = idx
+    pl = 0
+    pc = (pr + pl) // 2
+    while pl <= pr:
+        
+
 for i in range(len(targets)):
     idx = bin_search(nums, targets[i])
     if idx == -1:
