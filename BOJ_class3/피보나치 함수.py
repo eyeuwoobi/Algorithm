@@ -4,17 +4,25 @@ input = sys.stdin.readline
 
 t = int(input())
 
-def fibonacci(list, n):
-    if n == 0:
-        list[0] += 1
-        return 0
-    elif n == 1:
-        list[1] += 1
-        return 1
-    else:
-        return fibonacci(list, n-1) + fibonacci(list, n-2)
+# def fibonacci(list, n):
+#     if n == 0:
+#         list[0] += 1
+#     elif n == 1:
+#         list[1] += 1
+#     else:
+#         return fibonacci(list, n-1) + fibonacci(list, n-2)
 
 for _ in range(t):
-    counter = [0] * 2
-    fibonacci(counter, int(input()))
-    print(*counter, sep=' ')
+    n = int(input())
+    zeros = [1, 0]
+    ones = [0, 1]
+    if n <= 1:
+        print(zeros[n], end=' ')
+        print(ones[n])
+    else:
+        while n > 1:
+            zeros.append(zeros[-1] + zeros[-2])
+            ones.append(ones[-1] + ones[-2])
+            n -= 1
+        print(zeros[-1], end=' ')
+        print(ones[-1])
